@@ -35,6 +35,7 @@ class MainWindowMediator: Mediator {
     override func handleNotification(_ notification: INotification) {
         switch notification.name {
         case NotificationName.S_MEDIATOR_CLOSE:
+            getViewComponent().close()
             let _ = facade.removeMediator(MediatorName)
         case NotificationName.S_MEDIATOR_MAIN_WINDOW_INIT:
             getViewComponent().showWindow(nil)

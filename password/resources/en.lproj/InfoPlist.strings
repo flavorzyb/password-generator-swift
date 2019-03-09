@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  password
+
+  Created by 朱彦斌 on 2019/3/10.
+  Copyright © 2019 朱彦斌. All rights reserved.
+*/
+"CFBundleName" = "Password Generator";
+"CFBundleDisplayName" = "Password Generator";
