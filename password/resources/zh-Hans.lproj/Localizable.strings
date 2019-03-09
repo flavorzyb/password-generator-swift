@@ -9,3 +9,10 @@
 "PasswordOptions" = "密码选项";
 "UsedCharacters" = "所用字符:";
 "PasswordLength" = "密码长度:";
+"Result" = "结果";
+"GenerateResult" = "密码:";
+"GeneratorTips" = "请点击\"生成密码\"按钮来生成新的密码";
+"CopyPassword" = "拷贝";
+"OperatorOptions" = "操作选项";
+"GeneratorPassword" = "生成密码";
+"ExitProgram" = "退出程序";
