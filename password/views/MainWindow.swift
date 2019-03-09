@@ -10,17 +10,18 @@ import Cocoa
 
 class MainWindow: NSWindow, NSWindowDelegate {
     class func build() -> MainWindow {
-        let rect = NSRect(x: 0, y: 0, width: 800, height: 600)
-        let result = MainWindow(contentRect: rect, styleMask: .titled, backing: .buffered, defer: false)
+        let result = MainWindow(contentRect: AppConfig.windowRect, styleMask: .titled, backing: .buffered, defer: false)
         result.styleMask.insert(.closable)
         result.styleMask.insert(.miniaturizable)
 //        result.styleMask.insert(.resizable)
-        result.contentRect(forFrameRect: rect)
         result.title = NSLocalizedString("HomeTitle", comment: "")
         result.titleVisibility = .visible
         result.titlebarAppearsTransparent = false
         result.delegate = result
         result.center()
+        
+        let viewController = MainViewController()
+        result.contentViewController = viewController
         
         return result
     }

@@ -32,6 +32,8 @@
 	<array>
 		<string>fonts/AnonymousPro.ttf</string>
 		<string>fonts/AnonymousProB.ttf</string>
+		<string>fonts/FZCuJinLJW.TTF</string>
+		<string>fonts/FZXiJinLJW.TTF</string>
 	</array>
 </dict>
 </plist>

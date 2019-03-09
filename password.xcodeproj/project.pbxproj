@@ -23,6 +23,8 @@
 		2C4230F3223428D7008121A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4230F5223428D7008121A6 /* InfoPlist.strings */; };
 		2C4230F822342A7B008121A6 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 2C4230F722342A7B008121A6 /* fonts */; };
 		2C4230FA22342C3F008121A6 /* NSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230F922342C3F008121A6 /* NSFont.swift */; };
+		2C4230FC22342D45008121A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230FB22342D45008121A6 /* MainViewController.swift */; };
+		2C4230FE22342E9A008121A6 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230FD22342E9A008121A6 /* AppConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		2C4230F6223428D8008121A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2C4230F722342A7B008121A6 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		2C4230F922342C3F008121A6 /* NSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFont.swift; sourceTree = "<group>"; };
+		2C4230FB22342D45008121A6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2C4230FD22342E9A008121A6 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				2C4230D42234161B008121A6 /* NotificationName.swift */,
+				2C4230FD22342E9A008121A6 /* AppConfig.swift */,
 			);
 			path = configs;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			children = (
 				2C4230E922342302008121A6 /* MainWindow.swift */,
 				2C4230ED22342602008121A6 /* MainWindowController.swift */,
+				2C4230FB22342D45008121A6 /* MainViewController.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4230EA22342302008121A6 /* MainWindow.swift in Sources */,
+				2C4230FC22342D45008121A6 /* MainViewController.swift in Sources */,
 				2C4230FA22342C3F008121A6 /* NSFont.swift in Sources */,
 				2C4230DE2234192E008121A6 /* main.swift in Sources */,
 				2C4230D52234161B008121A6 /* NotificationName.swift in Sources */,
@@ -368,6 +375,7 @@
 				2C4230D9223417BE008121A6 /* IFacade.swift in Sources */,
 				2C4230D722341667008121A6 /* MainCommand.swift in Sources */,
 				2C4230F022342692008121A6 /* MainWindowMediator.swift in Sources */,
+				2C4230FE22342E9A008121A6 /* AppConfig.swift in Sources */,
 				2C4230EE22342602008121A6 /* MainWindowController.swift in Sources */,
 				2C4230CD2233E9E3008121A6 /* AppFacade.swift in Sources */,
 			);

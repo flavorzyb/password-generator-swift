@@ -10,18 +10,20 @@ import Cocoa
 
 extension NSFont {
     class func mainBoldFont(size: CGFloat) -> NSFont {
-        let font = NSFont(name: "AnonymousPro-Bold", size: size)
+//        let font = NSFont(name: "AnonymousPro-Bold", size: size)
+        let font = NSFont(name: "FZCUJINLJW--GB1-0", size: size)
         
 //        let manager = NSFontManager.shared
 //        for name: String in manager.availableFonts {
 //            print("font name=====" + name)
 //        }
-        
+//
         return font ?? NSFont.systemFont(ofSize: size)
     }
     
     class func mainFont(size: CGFloat) -> NSFont {
-        let font = NSFont(name: "AnonymousPro", size: size)
+//        let font = NSFont(name: "AnonymousPro", size: size)
+        let font = NSFont(name: "FZXIJINLJW--GB1-0", size: size)
         return font ?? NSFont.systemFont(ofSize: size)
     }
 }
