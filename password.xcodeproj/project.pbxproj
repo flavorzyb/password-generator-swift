@@ -21,6 +21,8 @@
 		2C4230EE22342602008121A6 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230ED22342602008121A6 /* MainWindowController.swift */; };
 		2C4230F022342692008121A6 /* MainWindowMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230EF22342692008121A6 /* MainWindowMediator.swift */; };
 		2C4230F3223428D7008121A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4230F5223428D7008121A6 /* InfoPlist.strings */; };
+		2C4230F822342A7B008121A6 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 2C4230F722342A7B008121A6 /* fonts */; };
+		2C4230FA22342C3F008121A6 /* NSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230F922342C3F008121A6 /* NSFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		2C4230EF22342692008121A6 /* MainWindowMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowMediator.swift; sourceTree = "<group>"; };
 		2C4230F4223428D7008121A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C4230F6223428D8008121A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		2C4230F722342A7B008121A6 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		2C4230F922342C3F008121A6 /* NSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 		2C4230CE223415D1008121A6 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C4230F722342A7B008121A6 /* fonts */,
 				2C4230E52234222C008121A6 /* Localizable.strings */,
 				2C4230F5223428D7008121A6 /* InfoPlist.strings */,
 			);
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				2C4230D8223417BE008121A6 /* IFacade.swift */,
+				2C4230F922342C3F008121A6 /* NSFont.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				2C4230A22233E60B008121A6 /* Assets.xcassets in Resources */,
 				2C4230F3223428D7008121A6 /* InfoPlist.strings in Resources */,
 				2C4230E32234222C008121A6 /* Localizable.strings in Resources */,
+				2C4230F822342A7B008121A6 /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4230EA22342302008121A6 /* MainWindow.swift in Sources */,
+				2C4230FA22342C3F008121A6 /* NSFont.swift in Sources */,
 				2C4230DE2234192E008121A6 /* main.swift in Sources */,
 				2C4230D52234161B008121A6 /* NotificationName.swift in Sources */,
 				2C4230A02233E60A008121A6 /* AppDelegate.swift in Sources */,

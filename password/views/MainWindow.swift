@@ -13,8 +13,8 @@ class MainWindow: NSWindow, NSWindowDelegate {
         let rect = NSRect(x: 0, y: 0, width: 800, height: 600)
         let result = MainWindow(contentRect: rect, styleMask: .titled, backing: .buffered, defer: false)
         result.styleMask.insert(.closable)
-        //        result.styleMask.insert(.miniaturizable)
-        //        result.styleMask.insert(.resizable)
+        result.styleMask.insert(.miniaturizable)
+//        result.styleMask.insert(.resizable)
         result.contentRect(forFrameRect: rect)
         result.title = NSLocalizedString("HomeTitle", comment: "")
         result.titleVisibility = .visible
