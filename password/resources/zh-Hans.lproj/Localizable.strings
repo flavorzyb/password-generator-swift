@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  password
+
+  Created by 朱彦斌 on 2019/3/10.
+  Copyright © 2019 朱彦斌. All rights reserved.
+*/
+"HomeTitle" = "密码生成器";
+"PasswordOptions" = "密码选项";
+"UsedCharacters" = "所用字符:";
+"PasswordLength" = "密码长度:";

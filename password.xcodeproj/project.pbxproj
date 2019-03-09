@@ -11,7 +11,15 @@
 		2C4230A22233E60B008121A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4230A12233E60B008121A6 /* Assets.xcassets */; };
 		2C4230B12233E60B008121A6 /* passwordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230B02233E60B008121A6 /* passwordTests.swift */; };
 		2C4230BC2233E60B008121A6 /* passwordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230BB2233E60B008121A6 /* passwordUITests.swift */; };
-		2C4230CB2233E747008121A6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230CA2233E747008121A6 /* main.swift */; };
+		2C4230CD2233E9E3008121A6 /* AppFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230CC2233E9E3008121A6 /* AppFacade.swift */; };
+		2C4230D52234161B008121A6 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230D42234161B008121A6 /* NotificationName.swift */; };
+		2C4230D722341667008121A6 /* MainCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230D622341667008121A6 /* MainCommand.swift */; };
+		2C4230D9223417BE008121A6 /* IFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230D8223417BE008121A6 /* IFacade.swift */; };
+		2C4230DE2234192E008121A6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230DD2234192E008121A6 /* main.swift */; };
+		2C4230E32234222C008121A6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4230E52234222C008121A6 /* Localizable.strings */; };
+		2C4230EA22342302008121A6 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230E922342302008121A6 /* MainWindow.swift */; };
+		2C4230EE22342602008121A6 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230ED22342602008121A6 /* MainWindowController.swift */; };
+		2C4230F022342692008121A6 /* MainWindowMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4230EF22342692008121A6 /* MainWindowMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +51,16 @@
 		2C4230B72233E60B008121A6 /* passwordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = passwordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4230BB2233E60B008121A6 /* passwordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordUITests.swift; sourceTree = "<group>"; };
 		2C4230BD2233E60B008121A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C4230CA2233E747008121A6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2C4230CC2233E9E3008121A6 /* AppFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFacade.swift; sourceTree = "<group>"; };
+		2C4230D42234161B008121A6 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		2C4230D622341667008121A6 /* MainCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCommand.swift; sourceTree = "<group>"; };
+		2C4230D8223417BE008121A6 /* IFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFacade.swift; sourceTree = "<group>"; };
+		2C4230DD2234192E008121A6 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2C4230E42234222C008121A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2C4230E62234223C008121A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2C4230E922342302008121A6 /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		2C4230ED22342602008121A6 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		2C4230EF22342692008121A6 /* MainWindowMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowMediator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,11 +111,18 @@
 		2C42309E2233E60A008121A6 /* password */ = {
 			isa = PBXGroup;
 			children = (
-				2C42309F2233E60A008121A6 /* AppDelegate.swift */,
-				2C4230A12233E60B008121A6 /* Assets.xcassets */,
-				2C4230A62233E60B008121A6 /* Info.plist */,
 				2C4230A72233E60B008121A6 /* password.entitlements */,
-				2C4230CA2233E747008121A6 /* main.swift */,
+				2C4230A62233E60B008121A6 /* Info.plist */,
+				2C42309F2233E60A008121A6 /* AppDelegate.swift */,
+				2C4230CC2233E9E3008121A6 /* AppFacade.swift */,
+				2C4230DD2234192E008121A6 /* main.swift */,
+				2C4230A12233E60B008121A6 /* Assets.xcassets */,
+				2C4230D3223415D1008121A6 /* commands */,
+				2C4230D0223415D1008121A6 /* configs */,
+				2C4230D2223415D1008121A6 /* extensions */,
+				2C4230DA22341877008121A6 /* mediators */,
+				2C4230CE223415D1008121A6 /* resources */,
+				2C4230D1223415D1008121A6 /* views */,
 			);
 			path = password;
 			sourceTree = "<group>";
@@ -119,6 +143,55 @@
 				2C4230BD2233E60B008121A6 /* Info.plist */,
 			);
 			path = passwordUITests;
+			sourceTree = "<group>";
+		};
+		2C4230CE223415D1008121A6 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C4230E52234222C008121A6 /* Localizable.strings */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		2C4230D0223415D1008121A6 /* configs */ = {
+			isa = PBXGroup;
+			children = (
+				2C4230D42234161B008121A6 /* NotificationName.swift */,
+			);
+			path = configs;
+			sourceTree = "<group>";
+		};
+		2C4230D1223415D1008121A6 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				2C4230E922342302008121A6 /* MainWindow.swift */,
+				2C4230ED22342602008121A6 /* MainWindowController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		2C4230D2223415D1008121A6 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C4230D8223417BE008121A6 /* IFacade.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		2C4230D3223415D1008121A6 /* commands */ = {
+			isa = PBXGroup;
+			children = (
+				2C4230D622341667008121A6 /* MainCommand.swift */,
+			);
+			path = commands;
+			sourceTree = "<group>";
+		};
+		2C4230DA22341877008121A6 /* mediators */ = {
+			isa = PBXGroup;
+			children = (
+				2C4230EF22342692008121A6 /* MainWindowMediator.swift */,
+			);
+			path = mediators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +281,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 2C4230932233E60A008121A6;
 			productRefGroup = 2C42309D2233E60A008121A6 /* Products */;
@@ -227,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4230A22233E60B008121A6 /* Assets.xcassets in Resources */,
+				2C4230E32234222C008121A6 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +348,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C4230CB2233E747008121A6 /* main.swift in Sources */,
+				2C4230EA22342302008121A6 /* MainWindow.swift in Sources */,
+				2C4230DE2234192E008121A6 /* main.swift in Sources */,
+				2C4230D52234161B008121A6 /* NotificationName.swift in Sources */,
 				2C4230A02233E60A008121A6 /* AppDelegate.swift in Sources */,
+				2C4230D9223417BE008121A6 /* IFacade.swift in Sources */,
+				2C4230D722341667008121A6 /* MainCommand.swift in Sources */,
+				2C4230F022342692008121A6 /* MainWindowMediator.swift in Sources */,
+				2C4230EE22342602008121A6 /* MainWindowController.swift in Sources */,
+				2C4230CD2233E9E3008121A6 /* AppFacade.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,11 +391,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		2C4230E52234222C008121A6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C4230E42234222C008121A6 /* en */,
+				2C4230E62234223C008121A6 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		2C4230BE2233E60B008121A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -376,6 +471,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
