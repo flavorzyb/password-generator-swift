@@ -37,3 +37,9 @@ $ brew upgrade carthage
 ```bash
 $ carthage update --platform macOS
 ```
+
+### 字体许可
+
+本项目属于开源免费的，适用于方正字体的个人非商业用途的许可
+
+具体协议见方正字体完整协议[http://www.foundertype.com/index.php/About/powerPer.html](http://www.foundertype.com/index.php/About/powerPer.html)
