@@ -45,15 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C42309C2233E60A008121A6 /* password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = password.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C42309C2233E60A008121A6 /* PasswordGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C42309F2233E60A008121A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C4230A12233E60B008121A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C4230A62233E60B008121A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C4230A72233E60B008121A6 /* password.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = password.entitlements; sourceTree = "<group>"; };
-		2C4230AC2233E60B008121A6 /* passwordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = passwordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4230AC2233E60B008121A6 /* PasswordGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4230B02233E60B008121A6 /* passwordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordTests.swift; sourceTree = "<group>"; };
 		2C4230B22233E60B008121A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C4230B72233E60B008121A6 /* passwordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = passwordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C4230B72233E60B008121A6 /* PasswordGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4230BB2233E60B008121A6 /* passwordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordUITests.swift; sourceTree = "<group>"; };
 		2C4230BD2233E60B008121A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C4230CC2233E9E3008121A6 /* AppFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFacade.swift; sourceTree = "<group>"; };
@@ -112,9 +112,9 @@
 		2C42309D2233E60A008121A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C42309C2233E60A008121A6 /* password.app */,
-				2C4230AC2233E60B008121A6 /* passwordTests.xctest */,
-				2C4230B72233E60B008121A6 /* passwordUITests.xctest */,
+				2C42309C2233E60A008121A6 /* PasswordGenerator.app */,
+				2C4230AC2233E60B008121A6 /* PasswordGeneratorTests.xctest */,
+				2C4230B72233E60B008121A6 /* PasswordGeneratorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,9 +213,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C42309B2233E60A008121A6 /* password */ = {
+		2C42309B2233E60A008121A6 /* PasswordGenerator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C4230C02233E60B008121A6 /* Build configuration list for PBXNativeTarget "password" */;
+			buildConfigurationList = 2C4230C02233E60B008121A6 /* Build configuration list for PBXNativeTarget "PasswordGenerator" */;
 			buildPhases = (
 				2C4230982233E60A008121A6 /* Sources */,
 				2C4230992233E60A008121A6 /* Frameworks */,
@@ -226,14 +226,14 @@
 			);
 			dependencies = (
 			);
-			name = password;
+			name = PasswordGenerator;
 			productName = password;
-			productReference = 2C42309C2233E60A008121A6 /* password.app */;
+			productReference = 2C42309C2233E60A008121A6 /* PasswordGenerator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2C4230AB2233E60B008121A6 /* passwordTests */ = {
+		2C4230AB2233E60B008121A6 /* PasswordGeneratorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C4230C32233E60B008121A6 /* Build configuration list for PBXNativeTarget "passwordTests" */;
+			buildConfigurationList = 2C4230C32233E60B008121A6 /* Build configuration list for PBXNativeTarget "PasswordGeneratorTests" */;
 			buildPhases = (
 				2C4230A82233E60B008121A6 /* Sources */,
 				2C4230A92233E60B008121A6 /* Frameworks */,
@@ -244,14 +244,14 @@
 			dependencies = (
 				2C4230AE2233E60B008121A6 /* PBXTargetDependency */,
 			);
-			name = passwordTests;
+			name = PasswordGeneratorTests;
 			productName = passwordTests;
-			productReference = 2C4230AC2233E60B008121A6 /* passwordTests.xctest */;
+			productReference = 2C4230AC2233E60B008121A6 /* PasswordGeneratorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2C4230B62233E60B008121A6 /* passwordUITests */ = {
+		2C4230B62233E60B008121A6 /* PasswordGeneratorUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C4230C62233E60B008121A6 /* Build configuration list for PBXNativeTarget "passwordUITests" */;
+			buildConfigurationList = 2C4230C62233E60B008121A6 /* Build configuration list for PBXNativeTarget "PasswordGeneratorUITests" */;
 			buildPhases = (
 				2C4230B32233E60B008121A6 /* Sources */,
 				2C4230B42233E60B008121A6 /* Frameworks */,
@@ -262,9 +262,9 @@
 			dependencies = (
 				2C4230B92233E60B008121A6 /* PBXTargetDependency */,
 			);
-			name = passwordUITests;
+			name = PasswordGeneratorUITests;
 			productName = passwordUITests;
-			productReference = 2C4230B72233E60B008121A6 /* passwordUITests.xctest */;
+			productReference = 2C4230B72233E60B008121A6 /* PasswordGeneratorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -290,7 +290,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2C4230972233E60A008121A6 /* Build configuration list for PBXProject "password" */;
+			buildConfigurationList = 2C4230972233E60A008121A6 /* Build configuration list for PBXProject "PasswordGenerator" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -304,9 +304,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2C42309B2233E60A008121A6 /* password */,
-				2C4230AB2233E60B008121A6 /* passwordTests */,
-				2C4230B62233E60B008121A6 /* passwordUITests */,
+				2C42309B2233E60A008121A6 /* PasswordGenerator */,
+				2C4230AB2233E60B008121A6 /* PasswordGeneratorTests */,
+				2C4230B62233E60B008121A6 /* PasswordGeneratorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -402,12 +402,12 @@
 /* Begin PBXTargetDependency section */
 		2C4230AE2233E60B008121A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2C42309B2233E60A008121A6 /* password */;
+			target = 2C42309B2233E60A008121A6 /* PasswordGenerator */;
 			targetProxy = 2C4230AD2233E60B008121A6 /* PBXContainerItemProxy */;
 		};
 		2C4230B92233E60B008121A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2C42309B2233E60A008121A6 /* password */;
+			target = 2C42309B2233E60A008121A6 /* PasswordGenerator */;
 			targetProxy = 2C4230B82233E60B008121A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -608,7 +608,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhuyanbin.passwordTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/password.app/Contents/MacOS/password";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordGenerator.app/Contents/MacOS/PasswordGenerator";
 			};
 			name = Debug;
 		};
@@ -629,7 +629,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhuyanbin.passwordTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/password.app/Contents/MacOS/password";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordGenerator.app/Contents/MacOS/PasswordGenerator";
 			};
 			name = Release;
 		};
@@ -676,7 +676,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C4230972233E60A008121A6 /* Build configuration list for PBXProject "password" */ = {
+		2C4230972233E60A008121A6 /* Build configuration list for PBXProject "PasswordGenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C4230BE2233E60B008121A6 /* Debug */,
@@ -685,7 +685,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C4230C02233E60B008121A6 /* Build configuration list for PBXNativeTarget "password" */ = {
+		2C4230C02233E60B008121A6 /* Build configuration list for PBXNativeTarget "PasswordGenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C4230C12233E60B008121A6 /* Debug */,
@@ -694,7 +694,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C4230C32233E60B008121A6 /* Build configuration list for PBXNativeTarget "passwordTests" */ = {
+		2C4230C32233E60B008121A6 /* Build configuration list for PBXNativeTarget "PasswordGeneratorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C4230C42233E60B008121A6 /* Debug */,
@@ -703,7 +703,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C4230C62233E60B008121A6 /* Build configuration list for PBXNativeTarget "passwordUITests" */ = {
+		2C4230C62233E60B008121A6 /* Build configuration list for PBXNativeTarget "PasswordGeneratorUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C4230C72233E60B008121A6 /* Debug */,
