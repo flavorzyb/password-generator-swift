@@ -7,3 +7,4 @@
 */
 "CFBundleName" = "Password Generator";
 "CFBundleDisplayName" = "Password Generator";
+"CFBundleExecutable" = "PasswordGenerator";

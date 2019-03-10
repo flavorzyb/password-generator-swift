@@ -7,3 +7,4 @@
 */
 "CFBundleName" = "密码生成器";
 "CFBundleDisplayName" = "自动密码生成器";
+"CFBundleExecutable" = "密码生成器";

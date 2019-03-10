@@ -34,6 +34,7 @@ class MainViewController: NSViewController {
     private let defaultLength: Int32 = 32
     private let maxLength: Double = 50
     private let minType = 2
+    private let specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*"]
     
     override func loadView() {
         let view = NSView(frame: AppConfig.windowRect)
@@ -112,7 +113,7 @@ class MainViewController: NSViewController {
         }
         
         cbSpecialCharacter = NSButton()
-        cbSpecialCharacter.title = "!@#$%^&*"
+        cbSpecialCharacter.title = specialCharacters.joined()
         cbSpecialCharacter.font = NSFont.mainFont(size: 14)
         cbSpecialCharacter.setButtonType(.switch)
         cbSpecialCharacter.state = .off
@@ -283,6 +284,9 @@ class MainViewController: NSViewController {
         scStepper.target = self
         scStepper.action = #selector(onChangeStepper(sender:))
         
+        btnCopy.target = self
+        btnCopy.action = #selector(onClickBtnCopy(sender:))
+        
         btnGenerator.target = self
         btnGenerator.action = #selector(onClickBtnGenerator(sender:))
         
@@ -296,6 +300,9 @@ class MainViewController: NSViewController {
         
         scStepper.target = nil
         scStepper.action = nil
+        
+        btnCopy.target = nil
+        btnCopy.action = nil
         
         btnGenerator.target = nil
         btnGenerator.action = nil
@@ -317,6 +324,8 @@ class MainViewController: NSViewController {
     @objc private func onClickBtnGenerator(sender: NSButton) {
         btnCopy.isEnabled = false
         tfPassword.isEnabled = false
+        tfPassword.isSelectable = false
+        tfPassword.textColor = NSColor.gray
         
         if !isEnableGenerator() {
             let alert = NSAlert()
@@ -331,11 +340,18 @@ class MainViewController: NSViewController {
         btnCopy.isEnabled = true
         tfPassword.isEnabled = true
         tfPassword.textColor = NSColor.black
+        tfPassword.isSelectable = true
         tfPassword.stringValue = generatorPassword()
     }
     
     @objc private func onClickBtnExit(sender: NSButton) {
         AppFacade.getInstance().sendNotification(NotificationName.S_MEDIATOR_MAIN_WINDOW_EXIT)
+    }
+    
+    @objc private func onClickBtnCopy(sender: NSButton) {
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([.string], owner: self)
+        pasteboard.setString(tfPassword.stringValue, forType: .string)
     }
     
     private func isEnableGenerator() -> Bool {
@@ -374,7 +390,7 @@ class MainViewController: NSViewController {
         }
         
         if cbSpecialCharacter.state == .on {
-            result.append(contentsOf: ["!", "@", "#", "$", "%", "^", "&", "*"])
+            result.append(contentsOf: specialCharacters)
         }
         
         return result
@@ -402,8 +418,7 @@ class MainViewController: NSViewController {
         }
         
         if cbSpecialCharacter.state == .on {
-            let data = ["!", "@", "#", "$", "%", "^", "&", "*"]
-            result.append(contentsOf: randomString(data: data, len: 2))
+            result.append(contentsOf: randomString(data: specialCharacters, len: 2))
         }
         
         return result
@@ -439,7 +454,11 @@ class MainViewController: NSViewController {
         }
         
         var result = ""
-        data = data.shuffled()
+        
+        repeat {
+            data = data.shuffled()
+        } while (data.count > 0 && specialCharacters.contains(data[0]))
+        
         for str: String in data {
             if result.count < length {
                 result.append(contentsOf: str)
