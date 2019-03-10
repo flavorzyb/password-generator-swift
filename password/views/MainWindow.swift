@@ -27,7 +27,7 @@ class MainWindow: NSWindow, NSWindowDelegate {
     }
     
     func windowShouldClose(_ sender: NSWindow) -> Bool {
-        NSApplication.shared.terminate(self)
+        AppFacade.getInstance().sendNotification(NotificationName.S_MEDIATOR_MAIN_WINDOW_EXIT)
         return true
     }
 }

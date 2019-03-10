@@ -17,5 +17,7 @@ class NotificationName {
     static let S_MEDIATOR_CLOSE = "sMediatorClose"
     // 初始化 main window
     static let S_MEDIATOR_MAIN_WINDOW_INIT = "S_MEDIATOR_MAIN_WINDOW_INIT"
+    // 退出程序
+    static let S_MEDIATOR_MAIN_WINDOW_EXIT = "S_MEDIATOR_MAIN_WINDOW_EXIT"
     /*********************[OTHERS]***************************************/
 }

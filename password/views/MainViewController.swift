@@ -23,6 +23,12 @@ class MainViewController: NSViewController {
     private var tfPassword: NSTextField!
     private var btnCopy: NSButton!
     
+    private var boxOperator: NSBox!
+    private var btnGenerator: NSButton!
+    private var btnExit: NSButton!
+    
+    private let boxSpace = 60
+    
     override func loadView() {
         let view = NSView(frame: AppConfig.windowRect)
         view.wantsLayer = true
@@ -30,6 +36,7 @@ class MainViewController: NSViewController {
         
         initPasswordOptionPanel()
         initResultPanel()
+        initOperatorPanel()
     }
     
     override func viewDidLoad() {
@@ -165,7 +172,7 @@ class MainViewController: NSViewController {
         }
         
         boxPasswordOptions.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(boxSpace - 20)
             make.centerX.equalToSuperview()
             make.width.equalTo(750)
             make.bottom.equalTo(tfPasswordLength).offset(40)
@@ -202,26 +209,64 @@ class MainViewController: NSViewController {
             make.width.equalTo(480)
         }
         
-        btnCopy = NSButton()
-        btnCopy.title = NSLocalizedString("CopyPassword", comment: "")
-        btnCopy.font = NSFont.mainFont(size: 14)
-        btnCopy.setButtonType(.momentaryPushIn)
-        btnCopy.isBordered = true
-        btnCopy.bezelStyle = .rounded
-        btnCopy.translatesAutoresizingMaskIntoConstraints = false
+        btnCopy = createButton(title: NSLocalizedString("CopyPassword", comment: ""))
         boxResult.addSubview(btnCopy)
         
         btnCopy.snp.makeConstraints { make in
             make.left.equalTo(tfPassword.snp.right).offset(20)
+            make.width.equalTo(100)
             make.centerY.equalTo(tfPassword)
         }
         
         boxResult.snp.makeConstraints { make in
-            make.top.equalTo(boxPasswordOptions.snp.bottom).offset(20)
+            make.top.equalTo(boxPasswordOptions.snp.bottom).offset(boxSpace)
             make.centerX.equalToSuperview()
             make.width.equalTo(750)
             make.bottom.equalTo(btnCopy).offset(30)
         }
+    }
+    
+    private func initOperatorPanel() {
+        boxOperator = NSBox()
+        boxOperator.title = NSLocalizedString("OperatorOptions", comment: "")
+        boxOperator.titleFont = NSFont.mainBoldFont(size: 16)
+        view.addSubview(boxOperator)
+        
+        btnGenerator = createButton(title: NSLocalizedString("GeneratorPassword", comment: ""))
+        boxOperator.addSubview(btnGenerator)
+        
+        btnGenerator.snp.makeConstraints { make in
+            make.left.equalTo(tfPassword)
+            make.top.equalToSuperview().offset(40)
+        }
+        
+        btnExit = createButton(title: NSLocalizedString("ExitProgram", comment: ""))
+        boxOperator.addSubview(btnExit)
+        
+        btnExit.snp.makeConstraints { make in
+            make.right.equalTo(tfPassword)
+            make.width.equalTo(btnGenerator)
+            make.centerY.equalTo(btnGenerator)
+        }
+        
+        boxOperator.snp.makeConstraints { make in
+            make.top.equalTo(boxResult.snp.bottom).offset(boxSpace)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(750)
+            make.bottom.equalTo(btnGenerator).offset(30)
+        }
+    }
+    
+    private func createButton(title: String) -> NSButton {
+        let result = NSButton()
+        result.title = title
+        result.font = NSFont.mainFont(size: 14)
+        result.setButtonType(.momentaryPushIn)
+        result.isBordered = true
+        result.bezelStyle = .rounded
+        result.translatesAutoresizingMaskIntoConstraints = false
+        
+        return result
     }
     
     private func addEvents() {
@@ -230,6 +275,12 @@ class MainViewController: NSViewController {
         
         scStepper.target = self
         scStepper.action = #selector(onChangeStepper(sender:))
+        
+        btnGenerator.target = self
+        btnGenerator.action = #selector(onClickBtnGenerator(sender:))
+        
+        btnExit.target = self
+        btnExit.action = #selector(onClickBtnExit(sender:))
     }
     
     private func removeEvents() {
@@ -238,15 +289,28 @@ class MainViewController: NSViewController {
         
         scStepper.target = nil
         scStepper.action = nil
+        
+        btnGenerator.target = nil
+        btnGenerator.action = nil
+        
+        btnExit.target = nil
+        btnGenerator.action = nil
     }
     
-    @objc func onChangedPasswordLength(sender: NSSlider) {
+    @objc private func onChangedPasswordLength(sender: NSSlider) {
         tfPasswordLengthValue.stringValue = "\(sender.integerValue)"
         scStepper.intValue = sender.intValue
     }
     
-    @objc func onChangeStepper(sender: NSStepper) {
+    @objc private func onChangeStepper(sender: NSStepper) {
         tfPasswordLengthValue.stringValue = "\(sender.integerValue)"
         slPasswordLength.intValue = sender.intValue
+    }
+    
+    @objc private func onClickBtnGenerator(sender: NSButton) {
+    }
+    
+    @objc private func onClickBtnExit(sender: NSButton) {
+        AppFacade.getInstance().sendNotification(NotificationName.S_MEDIATOR_MAIN_WINDOW_EXIT)
     }
 }

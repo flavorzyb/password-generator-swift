@@ -14,4 +14,8 @@ class MainWindowController: NSWindowController {
         let result = MainWindowController(window: window)
         return result
     }
+    
+    func terminate() {
+        NSApplication.shared.terminate(self)
+    }
 }
