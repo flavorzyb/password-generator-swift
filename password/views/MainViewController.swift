@@ -356,27 +356,79 @@ class MainViewController: NSViewController {
         return passwordType >= minType
     }
     
-    private func generatorPassword() -> String {
-        let length = slPasswordLength.intValue
-        var source: [String] = []
-        var data: [String] = []
-
+    /**
+     * 生成密码的可选字符集
+     */
+    private func buildPasswordSlate() -> [String] {
+        var result: [String] = []
         if cbUpperCharacter.state == .on {
-            source.append(contentsOf: appendString(from: "A", to: "Z"))
+            result.append(contentsOf: appendString(from: "A", to: "Z"))
         }
         
         if cbLowerCharacter.state == .on {
-            source.append(contentsOf: appendString(from: "a", to: "z"))
+            result.append(contentsOf: appendString(from: "a", to: "z"))
         }
         
         if cbNumberCharacter.state == .on {
-            source.append(contentsOf: appendString(from: "0", to: "9"))
+            result.append(contentsOf: appendString(from: "0", to: "9"))
         }
         
         if cbSpecialCharacter.state == .on {
-            source.append(contentsOf: ["!", "@", "#", "$", "%", "^", "&", "*"])
+            result.append(contentsOf: ["!", "@", "#", "$", "%", "^", "&", "*"])
         }
         
+        return result
+    }
+    
+    /**
+     * 密码中至少包含下列字符
+     * 从每种字符集中取出至少3个 即: minLength / maxType = 6 / 4 = 2
+     */
+    private func generatorBasePassword() -> [String] {
+        var result: [String] = []
+        if cbUpperCharacter.state == .on {
+            let data = appendString(from: "A", to: "Z")
+            result.append(contentsOf: randomString(data: data, len: 2))
+        }
+        
+        if cbLowerCharacter.state == .on {
+            let data = appendString(from: "a", to: "z")
+            result.append(contentsOf: randomString(data: data, len: 2))
+        }
+        
+        if cbNumberCharacter.state == .on {
+            let data = appendString(from: "0", to: "9")
+            result.append(contentsOf: randomString(data: data, len: 2))
+        }
+        
+        if cbSpecialCharacter.state == .on {
+            let data = ["!", "@", "#", "$", "%", "^", "&", "*"]
+            result.append(contentsOf: randomString(data: data, len: 2))
+        }
+        
+        return result
+    }
+    
+    private func randomString(data: [String], len: Int) -> [String] {
+        var result: [String] = []
+        let count = UInt32(data.count)
+        
+        while result.count < len {
+            let index = arc4random() % count
+            let value = data[Int(index)]
+            if !result.contains(value) {
+                result.append(value)
+            }
+        }
+        
+        return result
+    }
+    
+    private func generatorPassword() -> String {
+        let length = slPasswordLength.intValue
+        var source = buildPasswordSlate()
+        var data: [String] = generatorBasePassword()
+
         let count = UInt32(source.count)
         while data.count < length {
             let index = arc4random() % count
@@ -386,7 +438,15 @@ class MainViewController: NSViewController {
             }
         }
         
-        return data.joined()
+        var result = ""
+        data = data.shuffled()
+        for str: String in data {
+            if result.count < length {
+                result.append(contentsOf: str)
+            }
+        }
+        
+        return result
     }
     
     private func isMoreThanMaxTimes(value: String, data: [String]) -> Bool {
