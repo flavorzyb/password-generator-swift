@@ -28,6 +28,12 @@ class MainViewController: NSViewController {
     private var btnExit: NSButton!
     
     private let boxSpace = 60
+    // 在密码中每个字符允许出现的最大次数
+    private let maxTimes = 3
+    private let minLength: Double = 6
+    private let defaultLength: Int32 = 32
+    private let maxLength: Double = 50
+    private let minType = 2
     
     override func loadView() {
         let view = NSView(frame: AppConfig.windowRect)
@@ -129,7 +135,7 @@ class MainViewController: NSViewController {
             make.top.equalTo(tfUsedCharacter.snp.bottom).offset(30)
         }
         
-        tfPasswordLengthValue = NSTextField(string: "32")
+        tfPasswordLengthValue = NSTextField(string: "\(defaultLength)")
         tfPasswordLengthValue.isEditable = false
         tfPasswordLengthValue.isSelectable = false
         tfPasswordLengthValue.isBordered = true
@@ -142,12 +148,12 @@ class MainViewController: NSViewController {
         }
         
         scStepper = NSStepper()
-        scStepper.minValue = 1
+        scStepper.minValue = minLength
         scStepper.autorepeat = false
         scStepper.valueWraps = false
         scStepper.increment = 1
-        scStepper.maxValue = 50
-        scStepper.intValue = 32
+        scStepper.maxValue = maxLength
+        scStepper.intValue = defaultLength
         boxPasswordOptions.addSubview(scStepper)
         
         scStepper.snp.makeConstraints { make in
@@ -159,9 +165,9 @@ class MainViewController: NSViewController {
         slPasswordLength.sliderType = .linear
         slPasswordLength.numberOfTickMarks = 25
         slPasswordLength.tickMarkPosition = .below
-        slPasswordLength.minValue = 1
-        slPasswordLength.maxValue = 50
-        slPasswordLength.intValue = 32
+        slPasswordLength.minValue = minLength
+        slPasswordLength.maxValue = maxLength
+        slPasswordLength.intValue = defaultLength
         slPasswordLength.isContinuous = true
         
         boxPasswordOptions.addSubview(slPasswordLength)
@@ -210,6 +216,7 @@ class MainViewController: NSViewController {
         }
         
         btnCopy = createButton(title: NSLocalizedString("CopyPassword", comment: ""))
+        btnCopy.isEnabled = false
         boxResult.addSubview(btnCopy)
         
         btnCopy.snp.makeConstraints { make in
@@ -308,9 +315,104 @@ class MainViewController: NSViewController {
     }
     
     @objc private func onClickBtnGenerator(sender: NSButton) {
+        btnCopy.isEnabled = false
+        tfPassword.isEnabled = false
+        
+        if !isEnableGenerator() {
+            let alert = NSAlert()
+            alert.messageText = NSLocalizedString("ErrorTitle", comment: "")
+            alert.informativeText = NSLocalizedString("ErrorPasswordType", comment: "")
+            alert.alertStyle = .critical
+            alert.addButton(withTitle: NSLocalizedString("OK", comment: ""))
+            alert.runModal()
+            return
+        }
+        
+        btnCopy.isEnabled = true
+        tfPassword.isEnabled = true
+        tfPassword.textColor = NSColor.black
+        tfPassword.stringValue = generatorPassword()
     }
     
     @objc private func onClickBtnExit(sender: NSButton) {
         AppFacade.getInstance().sendNotification(NotificationName.S_MEDIATOR_MAIN_WINDOW_EXIT)
+    }
+    
+    private func isEnableGenerator() -> Bool {
+        var passwordType = 0
+        let stateList = [
+            cbUpperCharacter.state,
+            cbLowerCharacter.state,
+            cbNumberCharacter.state,
+            cbSpecialCharacter.state,
+        ]
+        
+        for state: NSControl.StateValue  in stateList {
+            if state == .on {
+                passwordType = passwordType + 1
+            }
+        }
+        
+        return passwordType >= minType
+    }
+    
+    private func generatorPassword() -> String {
+        let length = slPasswordLength.intValue
+        var source: [String] = []
+        var data: [String] = []
+
+        if cbUpperCharacter.state == .on {
+            source.append(contentsOf: appendString(from: "A", to: "Z"))
+        }
+        
+        if cbLowerCharacter.state == .on {
+            source.append(contentsOf: appendString(from: "a", to: "z"))
+        }
+        
+        if cbNumberCharacter.state == .on {
+            source.append(contentsOf: appendString(from: "0", to: "9"))
+        }
+        
+        if cbSpecialCharacter.state == .on {
+            source.append(contentsOf: ["!", "@", "#", "$", "%", "^", "&", "*"])
+        }
+        
+        let count = UInt32(source.count)
+        while data.count < length {
+            let index = arc4random() % count
+            let value = source[Int(index)]
+            if !isMoreThanMaxTimes(value: value, data: data) {
+                data.append(value)
+            }
+        }
+        
+        return data.joined()
+    }
+    
+    private func isMoreThanMaxTimes(value: String, data: [String]) -> Bool {
+        var times = 0
+        for str: String in data {
+            if value == str {
+                times += 1
+            }
+            
+            if (times >= maxTimes) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    private func appendString(from: String, to: String) -> [String] {
+        var result: [String] = []
+        let uniFrom = NSString(string: from).character(at: 0)
+        let uniTo = NSString(string: to).character(at: 0)
+        for value: unichar in uniFrom ... uniTo {
+            let str = String(format: "%c", value)
+            result.append(str)
+        }
+        
+        return result
     }
 }

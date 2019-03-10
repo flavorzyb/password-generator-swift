@@ -16,3 +16,6 @@
 "OperatorOptions" = "操作选项";
 "GeneratorPassword" = "生成密码";
 "ExitProgram" = "退出程序";
+"ErrorTitle" = "错误";
+"ErrorPasswordType" = "生成密码的字符不得低于2种";
+"OK" = "确认";

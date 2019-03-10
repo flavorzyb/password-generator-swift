@@ -16,4 +16,6 @@
 "OperatorOptions" = "Operator Options";
 "GeneratorPassword" = "GENERATOR";
 "ExitProgram" = "EXIT";
-
+"ErrorTitle" = "Error";
+"ErrorPasswordType" = "Password type must be more than two";
+"OK" = "OK";
